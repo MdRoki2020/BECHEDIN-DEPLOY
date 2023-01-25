@@ -71,7 +71,7 @@ exports.AllADs=(req,res)=>{
 //search products
 exports.ProductSearch=async(req,res)=>{
     try{
-        let search=req.body.search;
+        let search=req.params.search;
         let data=await PostAdsModel.find(
             {"ProductCategories":{ $regex: ".*"+search+".*"}}
             );
