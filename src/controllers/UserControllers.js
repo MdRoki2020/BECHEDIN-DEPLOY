@@ -68,3 +68,20 @@ exports.AllADs=(req,res)=>{
     })
 }
 
+//search products
+exports.ProductSearch=async(req,res)=>{
+    try{
+        let search=req.body.search;
+        let data=await PostAdsModel.find(
+            {"ProductCategories":{ $regex: ".*"+search+".*"}}
+            );
+        if(data.length>0){
+            res.status(200).json({status:"success",data:data})
+        }else{
+            res.status(200).json({status:"success",data:data})
+        }
+    }catch{
+        res.status(400).json({status:"fail",data:err})
+    }
+}
+
