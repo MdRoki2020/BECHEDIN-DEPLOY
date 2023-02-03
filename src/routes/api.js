@@ -40,4 +40,10 @@ router.get('/SpecificPublisherProductList/:PublisherEmail',PublisherController.S
 router.get('/DeleteProduct/:id',PublisherController.DeleteProduct);
 router.get('/DeletePublisher/:id',PublisherController.DeletePublisher);
 
+
+//for recovery password
+router.get("/RecoverVerifyEmail/:email",PublisherController.RecoverVerifyEmail);
+router.get("/RecoverVerifyOTP/:email/:otp",PublisherController.RecoverVerifyOTP);
+router.post("/RecoverResetPass",PublisherController.RecoverResetPass);
+
 module.exports=router;
