@@ -2,6 +2,7 @@ const PostAdsModel = require('../models/PostAdsModel');
 const PublisherModel=require('../models/PublisherModel');
 const jwt=require("jsonwebtoken");
 const OTPModel = require('../models/OtpModel');
+const SendEmailUtility = require('../utility/SendEmailUtility');
 
 //Create Publisher
 exports.CreatePublisher=(req,res)=>{
