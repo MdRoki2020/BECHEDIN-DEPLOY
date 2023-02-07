@@ -39,6 +39,7 @@ router.post('/AfterPostADsLogin/',PublisherController.AfterPostADsLogin);
 router.get('/SpecificPublisherProductList/:PublisherEmail',PublisherController.SpecificPublisherProductList);
 router.get('/DeleteProduct/:id',PublisherController.DeleteProduct);
 router.get('/DeletePublisher/:id',PublisherController.DeletePublisher);
+router.post('/UpdateProduct/:id',PublisherController.UpdateProduct);
 
 
 //for recovery password
