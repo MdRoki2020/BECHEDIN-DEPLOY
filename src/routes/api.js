@@ -30,7 +30,7 @@ router.get('/ReadById/:id',UserController.ReadById);
 router.get('/AllADs/',UserController.AllADs);
 router.get('/ProductSearch/:search',UserController.ProductSearch);
 router.get('/CreateComment/',UserController.CreateComment);
-router.get('/ReadCommentByProductId/',UserController.ReadCommentByProductId);
+router.get('/ReadCommentByProductId/:ProductId',UserController.ReadCommentByProductId);
 
 
 //Publisher Management
