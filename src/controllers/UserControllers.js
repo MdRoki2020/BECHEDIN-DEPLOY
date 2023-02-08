@@ -1,5 +1,6 @@
 const OrderModel=require('../models/OrderModel');
 const PostAdsModel=require('../models/PostAdsModel')
+const CommentsModel=require('../models/Comments');
 
 //create Order
 exports.CreateOrder=(req,res)=>{
@@ -107,6 +108,37 @@ exports.ProductSearch=async(req,res)=>{
 
 
 
+//create comments
+exports.CreateComment=(req,res)=>{
+    let reqBody=req.body;
+
+    CommentsModel.create(reqBody,(err,data)=>{
+
+        if(err){
+            res.status(400).json({status:"fail",data:err})
+        }else{
+            res.status(200).json({status:"success",data:data})
+        }
+    })
+}
+
+//Show comments By Id
+exports.ReadCommentByProductId=(req,res)=>{
+    let ProductId=req.params.ProductId;
+
+    CommentsModel.aggregate([
+        {$match:{ProductId:ProductId}},
+        {$project:{
+            _id:0,ProductId:1,Comments:1,CreatedDate:1,
+        }}
+    ],(err,data)=>{
+        if(err){
+            res.status(400).json({status:"fail",data:err})
+        }else{
+            res.status(200).json({status:"success",data:data})
+        }
+    })
+}
 
 
 
