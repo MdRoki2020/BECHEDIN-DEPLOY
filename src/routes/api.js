@@ -29,7 +29,7 @@ router.get('/FilterByCategories/:ProductCategories',UserController.FilterByCateg
 router.get('/ReadById/:id',UserController.ReadById);
 router.get('/AllADs/',UserController.AllADs);
 router.get('/ProductSearch/:search',UserController.ProductSearch);
-router.get('/CreateComment/',UserController.CreateComment);
+router.post('/CreateComment/',UserController.CreateComment);
 router.get('/ReadCommentByProductId/:ProductId',UserController.ReadCommentByProductId);
 
 
